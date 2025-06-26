@@ -1,0 +1,17 @@
+{
+  "name": "20-exercises-with-vitest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start:1": "node --watch exercise-1.js",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "@Dominic",
+  "license": "MIT",
+  "description": "20 Exercises With Vitest + Vanilla JavaScript",
+  "devDependencies": {
+    "vitest": "3.2.4"
+  }
+}
