@@ -37,22 +37,17 @@ export function executeCommands(commands) {
     const indexA = +command1.at(-1);
     const indexB = +command2?.at(-1);
 
-    if (instruction === 'MOV' && commandOneIsNumber) {
+    if (instruction === 'MOV' && commandOneIsNumber && !commandOneIsString) {
       state[indexB] = command1Number;
-    }
-    if (instruction === 'MOV' && commandOneIsString) {
+    } else if (instruction === 'MOV' && commandOneIsString) {
       state[indexB] = state[indexA];
-    }
-    if (instruction === 'ADD') {
+    } else if (instruction === 'ADD') {
       state[indexA] += state[indexB];
-    }
-    if (instruction === 'DEC') {
+    } else if (instruction === 'DEC') {
       state[indexA] -= 1;
-    }
-    if (instruction === 'INC') {
+    } else if (instruction === 'INC') {
       state[indexA] += 1;
-    }
-    if (instruction === 'JMP') {
+    } else if (instruction === 'JMP') {
       const indexOfV00 = 0;
       if (state[indexOfV00] !== 0) {
         i = command1Number - 1;
