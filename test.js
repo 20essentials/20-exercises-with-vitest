@@ -5,18 +5,21 @@
 */
 
 import { spawn } from "node:child_process";
+import path from "node:path";
 
 const arg = process.argv[2];
 
 if (!arg || isNaN(arg)) {
-  console.error("Please provide the test number. Example: pnpm test 1");
+  console.error("Please provide the test folder number. Example: pnpm test 1");
   process.exit(1);
 }
 
-const testPath = `${arg}/**/*.test.js`;
+// Usamos ruta absoluta de la carpeta del test
+const testDir = path.resolve(arg);
 
-const child = spawn("npx", ["vitest", "run", testPath], {
-  stdio: "inherit"
+const child = spawn("npx", ["vitest", "watch", "--dir", testDir], {
+  stdio: "inherit",
+  shell: true
 });
 
 child.on("exit", (code) => process.exit(code));
