@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start:1": "node --watch exercise-1.js",
-    "test": "vitest"
+    "start": "node run.js",
+    "test": "node test.js"
   },
   "keywords": [],
   "author": "@Dominic",
