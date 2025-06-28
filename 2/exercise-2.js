@@ -1,6 +1,6 @@
 /*
   The Last Challenge is a Maze
-  - https://2022.adventjs.dev/challenges/2022/24
+  - Exercise from: https://2022.adventjs.dev/challenges/2022/24
 
   It's the day! Today we're going to deliver gifts… but the warehouses are a maze and the elves are lost.
 
