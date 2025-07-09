@@ -35,12 +35,10 @@ export function checkIsValidCopy(original, copy) {
         if (copyIndex > originalIndex) continue;
         return false;
       }
-      const originalIsASpace = originalChar === ' ';
       const originalWasUpperCase = originalChar.toLowerCase() === charCopy;
       if (originalWasUpperCase) continue;
       const charCopyIsNotAValidChar = !validChars.includes(charCopy);
       if (charCopyIsNotAValidChar) return false;
-      if (originalIsASpace && areDifferentChars) return false;
     }
   }
 
